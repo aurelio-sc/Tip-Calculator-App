@@ -1,0 +1,45 @@
+body {
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: var(--background);
+
+}
+
+.name, .calculator {
+    width: 375px;
+    margin: 0 auto;
+    border: 1px solid;
+    text-align: center;
+}
+
+.calculator, .dataDisplayer{
+    background-color: var(--background2);
+}
+
+
+.title1{
+    margin-bottom: 0.25rem;
+}
+
+.title2{
+    margin-bottom: 0.5rem;
+}
+
+.calculator {
+    border-radius: 12px 12px 0 0;
+}
+
+.dataColector{
+    margin-top: 1rem;
+}
+.dataDisplayer{
+    margin-bottom: 1rem;
+}

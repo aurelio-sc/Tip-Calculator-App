@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./colors.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Tip Calculator App</title>
+</head>
+
+<body>
+
+  <div class="flexContainer">
+
+    <header class="name">
+      <h1 class="title1">SPLI</h1>
+      <h1 class="title2">TTER</h1>
+    </header>
+
+    <div class="calculator">
+
+      <form class="dataColector">
+
+        <div class="bill">
+          <label for="billValue">Bill</label>
+          <input type="number" class="billValue" min="0" required>
+        </div>
+
+        <div class="percentageSelector">
+
+          <legend>Select Tip %</legend>
+
+            <div class="percentage">
+
+              <input type="radio" id="five" name="tipPercentage" value="5" class="radioItem">
+              <label for=" five" class="labelItem">5%</label>
+
+              <input type="radio" id="ten" name="tipPercentage" value="10" class="radioItem">
+              <label for=" ten" class="labelItem">10%</label>
+
+              <input type="radio" id="fifteen" name="tipPercentage" value="15" class="radioItem">
+              <label for=" fifteen" class="labelItem">15%</label>
+
+              <input type="radio" id="twentyFive" name="tipPercentage" value="25" class="radioItem">
+              <label for=" twentyFive" class="labelItem">25%</label>
+
+              <input type="radio" id="fifty" name="tipPercentage" value="50" class="radioItem">
+              <label for=" fifty" class="labelItem">50%</label>
+
+              <!--   <label for="custom">Custom</label class="labelItem">   -->
+              <input type="number" id="custom" name="tipPercentage" min="0" value="" placeholder="Custom">
+              
+            </div>
+        </div>
+        
+        <div class="people">
+          <label for="peopleNumber">Number of People</label>
+          <input type="number" class="peopleNumber" min="1" step="1" required>
+        </div>
+
+      </form>
+
+
+      <div class="dataDisplayer">
+
+        <div class="tip">
+
+          <div class="tipText">
+            <p class="displayerLabel">Tip Amount</p>
+            <p class="displayerSubLabel">/ person</p>
+          </div>
+          
+          <div class="tipValue">
+            <p class="tipAmount"></p>
+          </div>
+
+        </div>
+
+        <div class="total">
+
+          <div class="totalText">
+            <p class="displayerLabel">Total</p>
+            <p class="displayerSubLabel">/ person</p>
+          </div>
+          
+          <div class="totalValue">
+            <p class="totalAmount"></p>
+          </div>
+
+        </div>
+
+        <div class="reset">
+          <input type="button" class="resetButton" value="RESET">
+        </div>
+
+      </div>
+
+    </div>
+  </div>  
+
+
+</body>
+</html>
