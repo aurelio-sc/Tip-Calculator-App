@@ -206,7 +206,7 @@ font-size: 1.5rem;
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--text3);
-    opacity: 1; /* Firefox */
+    opacity: 1; /* Firefox */ 
   }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
@@ -214,5 +214,5 @@ font-size: 1.5rem;
   }
   
   ::-ms-input-placeholder { /* Microsoft Edge */
-    color: var(--text3);
+    color: var(--text3); 
   }
