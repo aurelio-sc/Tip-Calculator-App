@@ -1,6 +1,7 @@
 body {
     font-family: monospace;
     font-size: 1.5rem;
+    background-color: var(--background1);
 }
 
 .flexContainer {
@@ -9,21 +10,18 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background-color: var(--background);
-
 }
 
 .name, .calculator {
     width: 375px;
     margin: 0 auto;
-    border: 1px solid;
+    /*border: 1px solid;*/
     text-align: center;
 }
 
 .calculator, .dataDisplayer{
     background-color: var(--background2);
 }
-
 
 .title1{
     margin-bottom: 0.25rem;
@@ -33,13 +31,188 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.title1, .title2 {
+    color: var(--text3);
+    font-weight: bold;
+}
+
 .calculator {
-    border-radius: 12px 12px 0 0;
+    border-radius: 12px;
 }
 
 .dataColector{
     margin-top: 1rem;
 }
-.dataDisplayer{
+
+.bill label, .percentageSelector legend, .people label{
+    color: var(--text1);
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+
+.bill{
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.billValue, .peopleNumber, .percentageSelector legend {    
+    margin: 0.5rem auto;
+}
+
+.billValue, .peopleNumber {
+    width: calc(100% - 4rem);
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--background5);
+    font-size: 1.5rem;    
+    color: var(--text3);
+    font-weight: bold;
+    text-align: right;
+}
+
+.billValue{
+    background: url(./images/icon-dollar.svg) no-repeat left 1rem center;
+    background-color: var(--background5);
+}
+
+.peopleNumber{
+    background: url(./images/icon-person.svg) no-repeat left 1rem center;
+    background-color: var(--background5);
+}
+
+.percentageSelector {
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.percentage {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.percentageOption, .percentageCustomOption {
+    width: calc(50% - 1rem);
+    height: 2rem;
+}
+
+.percentageOption {
+    background-color: var(--background3);
+    border-radius: 5px;
+    color: var(--background2);
+    font-weight: bold;
+}
+
+#custom {
+    width: calc(100% - 0.5rem);
+    height: 100%;
+    border-radius: 5px;
+    background-color: var(--background5);
+    border: none;
+    font-size: 1.5rem;    
+    color: var(--text3);
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.radioItem {
+    display: none; /*Some com a bolinha do diplay. A ideia é fazer no JS: se o usuário clicar na div, selecionar o radioItem.*/
+}
+
+
+.labelItem {
+    display: flex;
+    height: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.people {
     margin-bottom: 1rem;
 }
+
+
+.dataDisplayer{
+    margin-bottom: 1rem;
+    align-self: flex-start;
+    margin-right: 1rem;
+    margin-left:1rem;
+    background-color: var(--background3);
+    border-radius: 12px;
+}
+
+.tip, .total {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.tipValue, .totalValue {
+font-size: 1.5rem;    
+    color: var(--background4);
+    font-weight: bold;
+}
+
+.displayerLabel {
+    color: var(--background2);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.displayerSubLabel {
+    color: var(--text2);
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.resetButton {
+    margin-bottom: 1rem;
+    width: calc(100% - 2rem);
+    height: 3rem;
+    border-radius: 5px;
+    background-color: var(--background4);
+    color: var(--text3);
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;    
+}
+
+.resetButton:hover, .percentageOption:hover {
+    opacity: 0.7;
+}
+
+
+.resetButton:active {
+    background-color: var(--background2);
+    color: var(--background3);
+    opacity: 1;
+}
+
+
+
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text3);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--text3);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--text3);
+  }

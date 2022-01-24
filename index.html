@@ -20,8 +20,8 @@
   <div class="flexContainer">
 
     <header class="name">
-      <h1 class="title1">SPLI</h1>
-      <h1 class="title2">TTER</h1>
+      <h1 class="title1">S P L I</h1>
+      <h1 class="title2">T T E R</h1>
     </header>
 
     <div class="calculator">
@@ -38,24 +38,35 @@
           <legend>Select Tip %</legend>
 
             <div class="percentage">
+              <div class="percentageOption">
+                <input type="radio" id="five" name="tipPercentage" value="5" class="radioItem">
+                <label for=" five" class="labelItem">5%</label>
+              </div>
 
-              <input type="radio" id="five" name="tipPercentage" value="5" class="radioItem">
-              <label for=" five" class="labelItem">5%</label>
+              <div class="percentageOption">
+                <input type="radio" id="ten" name="tipPercentage" value="10" class="radioItem">
+                <label for=" ten" class="labelItem">10%</label>
+              </div>
 
-              <input type="radio" id="ten" name="tipPercentage" value="10" class="radioItem">
-              <label for=" ten" class="labelItem">10%</label>
+              <div class="percentageOption">
+                <input type="radio" id="fifteen" name="tipPercentage" value="15" class="radioItem">
+                <label for=" fifteen" class="labelItem">15%</label>
+              </div>
 
-              <input type="radio" id="fifteen" name="tipPercentage" value="15" class="radioItem">
-              <label for=" fifteen" class="labelItem">15%</label>
+              <div class="percentageOption">
+                <input type="radio" id="twentyFive" name="tipPercentage" value="25" class="radioItem">
+                <label for=" twentyFive" class="labelItem">25%</label>
+              </div>
 
-              <input type="radio" id="twentyFive" name="tipPercentage" value="25" class="radioItem">
-              <label for=" twentyFive" class="labelItem">25%</label>
+              <div class="percentageOption">
+                <input type="radio" id="fifty" name="tipPercentage" value="50" class="radioItem">
+                <label for=" fifty" class="labelItem">50%</label>
+              </div>
 
-              <input type="radio" id="fifty" name="tipPercentage" value="50" class="radioItem">
-              <label for=" fifty" class="labelItem">50%</label>
-
-              <!--   <label for="custom">Custom</label class="labelItem">   -->
-              <input type="number" id="custom" name="tipPercentage" min="0" value="" placeholder="Custom">
+              <div class="percentageCustomOption">
+                <!--   <label for="custom">Custom</label class="labelItem">   -->
+                <input type="number" id="custom" name="tipPercentage" min="0" value="" placeholder="Custom">
+              </div>
               
             </div>
         </div>
@@ -78,7 +89,7 @@
           </div>
           
           <div class="tipValue">
-            <p class="tipAmount"></p>
+            <p class="tipAmount">TIP</p>
           </div>
 
         </div>
@@ -91,7 +102,7 @@
           </div>
           
           <div class="totalValue">
-            <p class="totalAmount"></p>
+            <p class="totalAmount">TOTAL</p>
           </div>
 
         </div>
@@ -105,6 +116,6 @@
     </div>
   </div>  
 
-
+  <script src="./js/main.js"></script>
 </body>
 </html>
