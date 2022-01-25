@@ -5,6 +5,7 @@ const custom = document.querySelector("#custom");
 let tipAmount = document.querySelector(".tipAmount");
 let totalValue = document.querySelector(".totalValue");
 let discount;
+custom.value="";
 
 
 const reset = document.querySelector(".resetButton");//Para o botão RESET de fato resetar tudo.
@@ -69,10 +70,27 @@ function updatePeopleValue(){
     updateDisplayerValues();
 }
 
+custom.onkeyup = updateCustomValue;
+custom.onkeydown = updateCustomValue;
+function updateCustomValue(){
+    custom.value = this.value;
+    updateDisplayerValues();
+    console.log(custom.value);
+    discount = "";
+}
+
 //Essa função dá update nos valores de tip e total se tudo estiver preenchido corretamente
 function updateDisplayerValues(){
-    if (bill.value !=="" && people.value !=="" && discount !== "") {
+    if ((bill.value !=="") && (people.value !=="") && (discount !=="")) {
         tipAmount.textContent = "$ " + ((bill.value * discount)/(100*people.value)).toFixed(2);
         totalValue.textContent = "$ " + ((bill.value)/(people.value)+(bill.value * discount)/(100*people.value)).toFixed(2);
+    }else{
+        if((bill.value !=="") && (people.value !=="") && (custom.value !=="")) {
+            tipAmount.textContent = "$ " + ((bill.value * custom.value)/(100*people.value)).toFixed(2);
+            totalValue.textContent = "$ " + ((bill.value)/(people.value)+(bill.value * custom.value)/(100*people.value)).toFixed(2);
+        }else{
+            tipAmount.textContent = "";
+            totalValue.textContent = "";
+        }
     }
 }
