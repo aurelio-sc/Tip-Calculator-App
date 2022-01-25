@@ -4,7 +4,7 @@ const people = document.querySelector(".peopleNumber");
 const custom = document.querySelector("#custom");
 let tipAmount = document.querySelector(".tipAmount");
 let totalValue = document.querySelector(".totalValue");
-let discount;
+let discount = "";
 custom.value="";
 
 
@@ -49,6 +49,7 @@ percentageSelect.forEach(function(option){
 
 })
 
+
 custom.addEventListener("click", function(){
     custom.style.backgroundColor = "var(--background4";
     
@@ -56,6 +57,7 @@ custom.addEventListener("click", function(){
         option.style.backgroundColor = "var(--background3)"
     })
 })
+
 
 // Aqui se inicia a captura do valor digitado na bill - ATENÇÃO: o padrão servirá para capturar o Custom e o Number of People. É só replicá-lo! //
 bill.onkeyup = updateBillValue;
@@ -79,7 +81,8 @@ function updateCustomValue(){
     discount = "";
 }
 
-//Essa função dá update nos valores de tip e total se tudo estiver preenchido corretamente
+
+//Essa função dá update nos valores de tip e total se tudo estiver preenchido corretamente.
 function updateDisplayerValues(){
     if ((bill.value !=="") && (people.value !=="") && (discount !=="")) {
         tipAmount.textContent = "$ " + ((bill.value * discount)/(100*people.value)).toFixed(2);
