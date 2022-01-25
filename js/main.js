@@ -2,6 +2,7 @@ const bill = document.querySelector(".billValue");
 const tip = document.querySelector('input[name="tipPercentage"]:checked');
 const people = document.querySelector(".peopleNumber");
 const custom = document.querySelector("#custom");
+let discount;
 
 
 const reset = document.querySelector(".resetButton");//Para o botão RESET de fato resetar tudo.
@@ -27,9 +28,9 @@ percentageSelect.forEach(function(option){
         percentageSelect.forEach(function(option) {
             option.style.backgroundColor = "var(--background3)";
             custom.style.backgroundColor = "var(--background5)";
+            custom.value = ""
         })
-        option.style.backgroundColor = "var(--background4)";
-        
+        option.style.backgroundColor = "var(--background4)";        
     })
 
 })
@@ -45,6 +46,6 @@ custom.addEventListener("click", function(){
 
 
 
-//Ideia! Foda-se o radio! Coloque as porcentagens direto no JS. Faça com que, se a div dor clicada, ela muda de cor e pronto!
+//Ideia! Coloque as porcentagens direto no JS. Faça com que, se a div dor clicada, ela muda de cor e pronto!
 // Daí o JS, com valores já definidos em uma função, faz as contas.
 // Lembra de fazer as outras divs retornarem à cor original qnd outra for clicada.
