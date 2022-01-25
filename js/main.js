@@ -2,6 +2,8 @@ const bill = document.querySelector(".billValue");
 const tip = document.querySelector('input[name="tipPercentage"]:checked');
 const people = document.querySelector(".peopleNumber");
 const custom = document.querySelector("#custom");
+let tipAmount = document.querySelector(".tipAmount");
+let totalValue = document.querySelector(".totalValue");
 let discount;
 
 
@@ -10,6 +12,15 @@ reset.addEventListener("click", function(){
     bill.value = "";
     people.value = "";
     custom.value = "";
+    tipAmount.textContent = "";
+    totalValue.textContent = "";
+    discount = "";
+    percentageSelect.forEach(function(option){
+        
+        option.style.backgroundColor = "var(--background3)";
+        custom.style.backgroundColor = "var(--background5)";
+        custom.value = "";     
+    })
 
     const inputs = document.querySelectorAll("input"); //Essa função apaga (ou deveria apagar) os inputs selecionados.
     inputs.forEach(function(input){
@@ -28,9 +39,11 @@ percentageSelect.forEach(function(option){
         percentageSelect.forEach(function(option) {
             option.style.backgroundColor = "var(--background3)";
             custom.style.backgroundColor = "var(--background5)";
-            custom.value = ""
+            custom.value = "";
         })
-        option.style.backgroundColor = "var(--background4)";        
+        option.style.backgroundColor = "var(--background4)";   
+        discount = option.firstElementChild.value; //discount é o valor do input da div clicada.
+        updateDisplayerValues();  
     })
 
 })
@@ -43,9 +56,23 @@ custom.addEventListener("click", function(){
     })
 })
 
+// Aqui se inicia a captura do valor digitado na bill - ATENÇÃO: o padrão servirá para capturar o Custom e o Number of People. É só replicá-lo! //
+bill.onkeyup = updateBillValue;
+function updateBillValue(){
+    bill.value = this.value;
+    updateDisplayerValues();
+}
 
+people.onkeyup = updatePeopleValue;
+function updatePeopleValue(){
+    people.value = this.value;
+    updateDisplayerValues();
+}
 
-
-//Ideia! Coloque as porcentagens direto no JS. Faça com que, se a div dor clicada, ela muda de cor e pronto!
-// Daí o JS, com valores já definidos em uma função, faz as contas.
-// Lembra de fazer as outras divs retornarem à cor original qnd outra for clicada.
+//Essa função dá update nos valores de tip e total se tudo estiver preenchido corretamente
+function updateDisplayerValues(){
+    if (bill.value !=="" && people.value !=="" && discount !== "") {
+        tipAmount.textContent = "$ " + ((bill.value * discount)/(100*people.value)).toFixed(2);
+        totalValue.textContent = "$ " + ((bill.value)/(people.value)+(bill.value * discount)/(100*people.value)).toFixed(2);
+    }
+}
